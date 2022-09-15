@@ -22,6 +22,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   const playerChoice = playerSelection.toLowerCase();
 
+  console.log(`Your choice: ${playerSelection}, Computers choice: ${computerSelection}.`)  
+
   if (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissors') {
     return "That's not a valid choice. Try using 'rock' 'paper' or 'scissors'.";
   }
@@ -42,3 +44,16 @@ function playRound(playerSelection, computerSelection) {
 
   return 'There was no winner! Play again!'
 }
+
+function game() {
+  console.log('Starting the game!')
+  for (let i = 0; i < 5; i++) {
+    console.log(`Round ${i + 1}:`)
+    const playerSelection = prompt('Enter your selection: ')
+    console.log(playRound(playerSelection, getComputerChoice()))
+  }
+  console.log('Game over.')
+
+}
+
+game();
